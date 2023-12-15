@@ -1,3 +1,9 @@
+import subprocess
+import time
+import os
+
+subprocess.run(["pip", "install", "-r", "requirements.txt"])
+
 from aria2 import download_manager, is_valid_url
 from Youtube import download_video
 from soundcloud import soundcloud
@@ -10,12 +16,8 @@ from Upload import Upload
 from gimages import download_gimages
 from photos import download_photos
 from FFMPEG import ffmpeg_install
-
-import time
-import os
 import gdown
 
-subprocess.run(["pip", "install", "-r", "requirements.txt"])
 ffmpeg_install()
 
 while True:
