@@ -29,16 +29,21 @@ while True:
 
     if (choice == "1"):
         download_manager()
+
     elif (choice == "2"):
         os.system("cls")
         URL = input("Enter the link of the video/playlist: ")
-        QUALITY = input(
-            "Enter the quality (144p,240p,480p,720p,1080p,2K,4K,8K): ")
-        download_video(URL, QUALITY)
-        time.sleep(3)
-        os.system("cls")
-        print("Download Finished")
-        time.sleep(3)
+        if (is_valid_url(URL)):
+            QUALITY = input(
+                "Enter the quality (144p,240p,480p,720p,1080p,2K,4K,8K): ")
+            download_video(URL, QUALITY)
+            time.sleep(3)
+            os.system("cls")
+            print("Download Finished")
+            time.sleep(3)
+        else:
+            print("Invalid URL...")
+            time.sleep(2)
 
     elif (choice == "3"):
         URL = input("Enter a URL for a track/playlist/user: ")
