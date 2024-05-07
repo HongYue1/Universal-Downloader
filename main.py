@@ -48,7 +48,10 @@ def handle_operation(option):
 
 # Main loop for the menu
 while True:
-    os.system("cls")  # Clear console
+    if os.name == 'nt':
+        os.system("cls")  # Clear console
+    else:
+        os.system("clear")  # Clear console
 
     # Print menu options
     for key, value in MENU_OPTIONS.items():
